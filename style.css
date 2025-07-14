@@ -1,0 +1,351 @@
+/* ---- 0. CSS Reset / Styles de base ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* S'assure que padding et border sont inclus dans la largeur/hauteur */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Police de base */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Largeur maximale pour le contenu */
+    margin: auto; /* Centre le conteneur */
+    overflow: hidden; /* Pour gérer les flottants si besoin */
+}
+
+a {
+    color: #0056b3; /* Couleur des liens par défaut */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none; /* Enlève les puces des listes */
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Police pour les titres */
+    color: #222;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* ---- 1. Header (En-tête) ---- */
+header {
+    background: #ffffff;
+    color: #333;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+header .container {
+    display: flex; /* Utilisation de Flexbox pour aligner logo et navigation */
+    justify-content: space-between; /* Espace entre le logo et la nav */
+    align-items: center; /* Centrage vertical */
+}
+
+.logo img {
+    height: 50px; /* Taille du logo */
+}
+
+.main-nav ul {
+    display: flex; /* Aligne les éléments de navigation horizontalement */
+}
+
+.main-nav ul li {
+    margin-left: 20px;
+}
+
+.main-nav ul li a {
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Bouton du menu mobile (à cacher sur desktop) */
+.menu-toggle {
+    display: none; /* Caché par défaut, sera visible sur mobile avec Media Queries */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+
+/* ---- 2. Hero Section ---- */
+.hero {
+    background: #0056b3; /* Couleur principale de l'université ou de la faculté */
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #28a745; /* Une couleur d'action (vert) */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #218838;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: #6c757d; /* Couleur secondaire (gris) */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    text-decoration: none;
+}
+
+/* ---- 3. News & Events Section ---- */
+.news-events {
+    padding: 40px 0;
+    background: #fff;
+    margin-bottom: 30px;
+    text-align: center; /* Centre le titre et le bouton */
+}
+
+.news-events h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colonnes flexibles */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left; /* Texte à gauche dans les cartes */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: #0056b3;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.card .read-more {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.card .read-more:hover {
+    color: #218838;
+}
+
+/* ---- 4. About Summary Section ---- */
+.about-summary {
+    background: #e9ecef;
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-summary h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-summary p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* ---- 5. Footer (Pied de page) ---- */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 0 20px;
+    font-size: 0.9rem;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur petits écrans */
+    margin-bottom: 30px;
+}
+
+.footer-section {
+    flex: 1; /* Chaque section prend une part égale de l'espace */
+    min-width: 250px; /* Largeur minimale avant de passer à la ligne */
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section:last-child {
+    margin-right: 0;
+}
+
+.footer-section h3 {
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section.contact-info p {
+    margin-bottom: 5px;
+}
+
+.footer-section.contact-info i {
+    margin-right: 8px;
+    color: #0056b3;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0056b3;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+}
+
+/* ---- Media Queries (Pour la Responsivité) ---- */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Cache le menu principal par défaut sur mobile */
+        width: 100%;
+        order: 3; /* Pour qu'il apparaisse en dessous */
+        margin-top: 15px;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Les liens du menu deviennent verticaux */
+        text-align: center;
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+    }
+
+    header .container {
+        flex-wrap: wrap; /* Permet aux éléments de l'en-tête de passer à la ligne */
+        justify-content: center; /* Centre le logo */
+    }
+
+    .menu-toggle {
+        display: block; /* Affiche le bouton menu sur mobile */
+        position: absolute; /* Permet de le positionner librement */
+        right: 5%; /* Marge par rapport à la droite */
+        top: 30px; /* Ajuster si nécessaire */
+    }
+
+    /* JavaScript ajoutera la classe 'active' pour afficher/cacher le menu */
+    .main-nav.active {
+        display: flex; /* Rend le menu visible quand 'active' */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .grid-3-cols {
+        grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-right: 0;
+        text-align: center;
+    }
+}
